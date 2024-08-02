@@ -368,6 +368,10 @@ a {
   @include small {
     font-size: 0.9rem;
   }
+
+  a {
+    color: #fff;
+  }
 }
 
 .site-footer-owner {
