@@ -376,9 +376,12 @@ a {
 
 .site-footer-owner {
   display: block;
-  font-weight: bold;
 }
 
 .site-footer-credits {
   color: $blockquote-text-color;
+
+  a {
+    color: $blockquote-text-color;
+  }
 }
