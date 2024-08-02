@@ -28,7 +28,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
@@ -167,15 +167,15 @@ a {
   }
 
   @include large {
-    max-width: 64rem;
+    max-width: 74rem;
     padding: 2rem 6rem;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   @include medium {
     padding: 2rem 4rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   @include small {
@@ -209,7 +209,7 @@ a {
   h6 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-weight: normal;
+    font-weight: 600;
     color: $section-headings-color;
   }
 
