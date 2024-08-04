@@ -9,8 +9,8 @@ It is custom theme used for some of the [jurakovic.github.io](https://jurakovic.
 Key differences ([compare](https://github.com/jurakovic/cayman-blue/compare/master...jurakovic:cayman-blue:cayman-blue?expand=1)):
 
 - fixed Google Analytics scripts
-- changed styles (colors, fonts, sizes, paddings etc.)
+- changed style (colors, fonts, sizes, paddings etc.)
 - changed html `<title>` tag (removed repo description)
 - added favicon (non-customizable)
-- added `show_header`, `show_footer`, `custom_css` support in *config.yml* ([example](https://github.com/jurakovic/jurakovic.github.io/blob/master/_config.yml))
 - changed footer content (non-customizable)
+- added `show_header`, `show_footer`, `custom_css` support in *config.yml* ([example](https://github.com/jurakovic/jurakovic.github.io/blob/master/_config.yml))
