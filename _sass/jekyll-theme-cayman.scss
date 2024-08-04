@@ -351,10 +351,8 @@ a {
 }
 
 .site-footer {
-  color: $header-heading-color;
   text-align: center;
   background-color: $header-bg-color;
-  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
   padding: 1rem;
 
   @include large {
@@ -366,22 +364,10 @@ a {
   }
 
   @include small {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
 
   a {
     color: #fff;
-  }
-}
-
-.site-footer-owner {
-  display: block;
-}
-
-.site-footer-credits {
-  color: $blockquote-text-color;
-
-  a {
-    color: $blockquote-text-color;
   }
 }
