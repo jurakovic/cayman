@@ -351,20 +351,21 @@ a {
 }
 
 .site-footer {
+  color: #fff;
   text-align: center;
   background-color: $header-bg-color;
-  padding: 1rem;
+  font-size: 1rem;
 
   @include large {
-    font-size: 1rem;
+    padding: 1rem;
   }
 
   @include medium {
-    font-size: 1rem;
+    padding: 1rem;
   }
 
   @include small {
-    font-size: 0.5rem;
+    padding: 0.5rem;
   }
 
   a {
