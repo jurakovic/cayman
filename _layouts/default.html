@@ -14,11 +14,42 @@
     {% if site.dark_theme %}
     <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.34/darkreader.min.js"></script>
     <script>
-        DarkReader.auto({
-            brightness: 100,
-            contrast: 90,
-            sepia: 5
-        });
+      DarkReader.auto({
+          brightness: 100,
+          contrast: 90,
+          sepia: 5
+      });
+    </script>
+    <script>
+      button = document.getElementById("toggle-theme");
+      const states = ['auto', 'disable', 'enable'];
+      let currentStateIndex = 0;
+      
+      function toggleTheme() {
+          const state = states[currentStateIndex];
+          currentStateIndex = (currentStateIndex + 1) % states.length;
+      
+          if (state === 'disable') {
+              DarkReader.disable();
+              button.style.color = '#2a2c2e';
+              button.textContent = 'Theme: Light';
+          } else if (state === 'enable') {
+              DarkReader.enable({
+                  brightness: 100,
+                  contrast: 90,
+                  sepia: 5
+              });
+              button.textContent = 'Theme: System';
+          } else if (state === 'auto') {
+              DarkReader.auto({
+                  brightness: 100,
+                  contrast: 90,
+                  sepia: 5
+              });
+              button.textContent = 'Theme: Dark';
+          }
+      }
+      button.addEventListener('click', toggleTheme);
     </script>
     {% endif %}
 </head>
@@ -45,6 +76,9 @@
 
     {% if site.show_footer or site.show_footer == nil %}
     <footer class="site-footer">
+      {% if site.dark_theme %}
+      <button id="toggle-theme" style="border: none; cursor: pointer; position: absolute; left: 5px;">Theme: System</button>
+      {% endif %}
       <a href="https://jurakovic.github.io/">Index</a>
       ·
       <a href="{{ site.github.repository_url }}">GitHub</a>
