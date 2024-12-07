@@ -20,69 +20,71 @@
           sepia: 5
       });
     </script>
-    <script>
-      button = document.getElementById("toggle-theme");
-      const states = ['auto', 'disable', 'enable'];
-      let currentStateIndex = 0;
-      
-      function toggleTheme() {
-          const state = states[currentStateIndex];
-          currentStateIndex = (currentStateIndex + 1) % states.length;
-      
-          if (state === 'disable') {
-              DarkReader.disable();
-              button.style.color = '#2a2c2e';
-              button.textContent = 'Theme: Light';
-          } else if (state === 'enable') {
-              DarkReader.enable({
-                  brightness: 100,
-                  contrast: 90,
-                  sepia: 5
-              });
-              button.textContent = 'Theme: System';
-          } else if (state === 'auto') {
-              DarkReader.auto({
-                  brightness: 100,
-                  contrast: 90,
-                  sepia: 5
-              });
-              button.textContent = 'Theme: Dark';
-          }
-      }
-      button.addEventListener('click', toggleTheme);
-    </script>
     {% endif %}
 </head>
-  <body>
+<body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     {% if site.show_header or site.show_header == nil %}
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      {% if site.github.is_project_page %}
+        <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+        <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+        {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-      {% endif %}
-      {% if site.show_downloads %}
+        {% endif %}
+        {% if site.show_downloads %}
         <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
         <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
-      {% endif %}
+        {% endif %}
     </header>
     {% endif %}
 
     <main id="content" class="main-content" role="main">
-      {{ content }}
+        {{ content }}
     </main>
 
     {% if site.show_footer or site.show_footer == nil %}
     <footer class="site-footer">
-      {% if site.dark_theme %}
-      <button id="toggle-theme" style="border: none; cursor: pointer; position: absolute; left: 5px;">Theme: System</button>
-      {% endif %}
-      <a href="https://jurakovic.github.io/">Index</a>
-      ·
-      <a href="{{ site.github.repository_url }}">GitHub</a>
+        {% if site.dark_theme %}
+        <button id="toggle-theme" style="border: none; cursor: pointer; position: absolute; left: 5px;">Theme: System</button>
+        {% endif %}
+        <a href="https://jurakovic.github.io/">Index</a>
+        ·
+        <a href="{{ site.github.repository_url }}">GitHub</a>
     </footer>
     {% endif %}
-  </body>
+    {% if site.dark_theme %}
+    <script>
+        button = document.getElementById("toggle-theme");
+        const states = ['auto', 'disable', 'enable'];
+        let currentStateIndex = 0;
+
+        function toggleTheme() {
+            const state = states[currentStateIndex];
+            currentStateIndex = (currentStateIndex + 1) % states.length;
+
+            if (state === 'disable') {
+                DarkReader.disable();
+                button.style.color = '#2a2c2e';
+                button.textContent = 'Theme: Light';
+            } else if (state === 'enable') {
+                DarkReader.enable({
+                    brightness: 100,
+                    contrast: 90,
+                    sepia: 5
+                });
+                button.textContent = 'Theme: System';
+            } else if (state === 'auto') {
+                DarkReader.auto({
+                    brightness: 100,
+                    contrast: 90,
+                    sepia: 5
+                });
+                button.textContent = 'Theme: Dark';
+            }
+        }
+        button.addEventListener('click', toggleTheme);
+    </script>
+    {% endif %}
+</body>
 </html>
