@@ -10,7 +10,8 @@ Key differences ([compare](https://github.com/jurakovic/cayman-blue/compare/mast
 
 - fixed Google Analytics scripts
 - changed style (colors, fonts, sizes, paddings etc.)
+- added dark theme support (thanks to [darkreader](https://github.com/darkreader/darkreader))
 - changed html `<title>` tag (removed repo description)
 - added favicon (non-customizable)
 - changed footer content (non-customizable)
-- added `show_header`, `show_footer`, `custom_css`, `dark_theme` support in *config.yml* ([example](https://github.com/jurakovic/jurakovic.github.io/blob/master/_config.yml))
+- added `show_header`, `show_footer`, `custom_css`, support in *config.yml* ([example](https://github.com/jurakovic/jurakovic.github.io/blob/master/_config.yml))
