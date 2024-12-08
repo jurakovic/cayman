@@ -46,7 +46,7 @@
     {% if site.show_footer or site.show_footer == nil %}
     <footer class="site-footer">
         {% if site.dark_theme %}
-        <a id="toggle-theme" class="toggle-theme">Theme: Auto</a>
+        <a id="toggle-theme" class="toggle-theme">Theme: 🌗</a>
         {% endif %}
         <a href="https://jurakovic.github.io/">Index</a>
         ·
@@ -70,21 +70,21 @@
                 DarkReader.disable();
                 btn.style.color = '#2a2c2e';
                 btn.style.backgroundColor = 'white';
-                btn.innerHTML = 'Theme: Light';
+                btn.innerHTML = 'Theme: ☀️';
             } else if (state === 'enable') {
                 DarkReader.enable({
                     brightness: 100,
                     contrast: 90,
                     sepia: 5
                 });
-                btn.innerHTML = 'Theme: Auto';
+                btn.innerHTML = 'Theme: 🌗';
             } else if (state === 'auto') {
                 DarkReader.auto({
                     brightness: 100,
                     contrast: 90,
                     sepia: 5
                 });
-                btn.innerHTML = 'Theme: Dark';
+                btn.innerHTML = 'Theme: 🌙';
             }
         }
 
