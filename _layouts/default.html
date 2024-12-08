@@ -46,7 +46,7 @@
     {% if site.show_footer or site.show_footer == nil %}
     <footer class="site-footer">
         {% if site.dark_theme %}
-        <button id="toggle-theme" style="border: none; cursor: pointer; position: absolute; left: 5px;">Theme: System</button>
+        <a id="toggle-theme" style="background-color: white; border: none; cursor: pointer; position: absolute; left: 5px; padding: 1px 6px; text-decoration: none">Theme: System</a>
         {% endif %}
         <a href="https://jurakovic.github.io/">Index</a>
         ·
@@ -55,7 +55,7 @@
     {% endif %}
     {% if site.dark_theme %}
     <script>
-        button = document.getElementById("toggle-theme");
+        let btn = document.getElementById("toggle-theme");
         const states = ['auto', 'disable', 'enable'];
         let currentStateIndex = 0;
 
@@ -65,25 +65,26 @@
 
             if (state === 'disable') {
                 DarkReader.disable();
-                button.style.color = '#2a2c2e';
-                button.textContent = 'Theme: Light';
+                btn.style.color = '#2a2c2e';
+                btn.style.backgroundColor = 'white';
+                btn.innerHTML  = 'Theme: Light';
             } else if (state === 'enable') {
                 DarkReader.enable({
                     brightness: 100,
                     contrast: 90,
                     sepia: 5
                 });
-                button.textContent = 'Theme: System';
+                btn.innerHTML  = 'Theme: System';
             } else if (state === 'auto') {
                 DarkReader.auto({
                     brightness: 100,
                     contrast: 90,
                     sepia: 5
                 });
-                button.textContent = 'Theme: Dark';
+                btn.innerHTML  = 'Theme: Dark';
             }
         }
-        button.addEventListener('click', toggleTheme);
+        btn.addEventListener('click', toggleTheme);
     </script>
     {% endif %}
 </body>
