@@ -46,7 +46,7 @@
     {% if site.show_footer or site.show_footer == nil %}
     <footer class="site-footer">
         {% if site.dark_theme %}
-        <a id="toggle-theme" style="background-color: white; border: none; cursor: pointer; position: absolute; left: 5px; padding: 1px 6px; text-decoration: none">Theme: System</a>
+        <a id="toggle-theme" class="toggle-theme">Theme: Auto</a>
         {% endif %}
         <a href="https://jurakovic.github.io/">Index</a>
         ·
@@ -67,21 +67,21 @@
                 DarkReader.disable();
                 btn.style.color = '#2a2c2e';
                 btn.style.backgroundColor = 'white';
-                btn.innerHTML  = 'Theme: Light';
+                btn.innerHTML = 'Theme: Light';
             } else if (state === 'enable') {
                 DarkReader.enable({
                     brightness: 100,
                     contrast: 90,
                     sepia: 5
                 });
-                btn.innerHTML  = 'Theme: System';
+                btn.innerHTML = 'Theme: Auto';
             } else if (state === 'auto') {
                 DarkReader.auto({
                     brightness: 100,
                     contrast: 90,
                     sepia: 5
                 });
-                btn.innerHTML  = 'Theme: Dark';
+                btn.innerHTML = 'Theme: Dark';
             }
         }
         btn.addEventListener('click', toggleTheme);
