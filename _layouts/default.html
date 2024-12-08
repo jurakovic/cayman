@@ -55,13 +55,16 @@
     {% endif %}
     {% if site.dark_theme %}
     <script>
-        let btn = document.getElementById("toggle-theme");
-        const states = ['auto', 'disable', 'enable'];
-        let currentStateIndex = 0;
+        const btn = document.getElementById("toggle-theme");
 
-        function toggleTheme() {
+        const states = ['auto', 'disable', 'enable'];
+        let currentStateIndex = localStorage.getItem('themeStateIndex')
+            ? parseInt(localStorage.getItem('themeStateIndex'), 10)
+            : 0;
+
+
+        function updateTheme() {
             const state = states[currentStateIndex];
-            currentStateIndex = (currentStateIndex + 1) % states.length;
 
             if (state === 'disable') {
                 DarkReader.disable();
@@ -84,7 +87,17 @@
                 btn.innerHTML = 'Theme: Dark';
             }
         }
+
+        function toggleTheme() {
+            currentStateIndex = (currentStateIndex + 1) % states.length;
+            localStorage.setItem('themeStateIndex', currentStateIndex);
+            updateTheme();
+        }
+
         btn.addEventListener('click', toggleTheme);
+
+        // Apply the saved theme state on page load
+        updateTheme();
     </script>
     {% endif %}
 </body>
