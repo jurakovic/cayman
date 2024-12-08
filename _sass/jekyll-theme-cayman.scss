@@ -365,3 +365,13 @@ a {
     color: rgba(255, 255, 255, 0.9);
   }
 }
+
+.toggle-theme {
+   position: absolute;
+   left: 5px;
+   padding: 1px 6px;
+   border: none;
+   background-color: white;
+   text-decoration: none !important;
+   cursor: pointer;
+}
