@@ -91,9 +91,10 @@
             updateTheme();
         }
 
-        themeBtn.addEventListener('click', toggleTheme);
+        if (themeBtn) // if footer not hidden
+            themeBtn.addEventListener('click', toggleTheme);
 
-        // Apply the saved theme state on page load
+        // apply the saved theme on page load
         updateTheme();
     </script>
     {% endif %}
